@@ -1,0 +1,78 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Dark theme (default) ── */
+:root, [data-theme="dark"] {
+  --bg: #0b0914;
+  --bg-surface: #100e1d;
+  --bg-card: #18152b;
+  --bg-card2: #201c35;
+  --bg-input: #1c1930;
+  --accent: #9b72f8;
+  --accent-dim: #6d28d9;
+  --accent-glow: rgba(139, 92, 246, 0.4);
+  --gold: #c9a84c;
+  --text-primary: #edeaff;
+  --text-muted: #7e7a9e;
+  --text-faint: #4a4668;
+  --border: #252240;
+  --border-hover: #3d3860;
+  --user-bubble: #2e1f72;
+  --user-text: #ede9ff;
+  --ai-bubble: #16132a;
+  --ai-border: #2a263f;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --gradient-hero: radial-gradient(ellipse 70% 50% at 50% -5%, rgba(109, 40, 217, 0.45) 0%, transparent 70%),
+                   radial-gradient(ellipse 40% 30% at 85% 85%, rgba(37, 99, 235, 0.15) 0%, transparent 60%);
+  --scrollbar: #2a2645;
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --bg: #f3f0ff;
+  --bg-surface: #ffffff;
+  --bg-card: #ebe6ff;
+  --bg-card2: #e0d8ff;
+  --bg-input: #ffffff;
+  --accent: #7c3aed;
+  --accent-dim: #6d28d9;
+  --accent-glow: rgba(124, 58, 237, 0.2);
+  --gold: #92680a;
+  --text-primary: #1a1430;
+  --text-muted: #6a6488;
+  --text-faint: #b0abcc;
+  --border: #d8d2f4;
+  --border-hover: #b8b0e8;
+  --user-bubble: #7c3aed;
+  --user-text: #ffffff;
+  --ai-bubble: #ffffff;
+  --ai-border: #ddd8f5;
+  --shadow: 0 8px 32px rgba(100, 80, 200, 0.12);
+  --shadow-sm: 0 2px 12px rgba(100, 80, 200, 0.08);
+  --gradient-hero: radial-gradient(ellipse 70% 50% at 50% -5%, rgba(124, 58, 237, 0.18) 0%, transparent 70%),
+                   radial-gradient(ellipse 40% 30% at 85% 85%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+  --scrollbar: #d0caf0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  height: 100dvh;
+  overflow: hidden;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+#root {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 4px; }

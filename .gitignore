@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Dados locais (regeneráveis)
+banco/
+indexados.json
+
+# PDFs (pesados e com direitos autorais)
+*.pdf
+livros/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
