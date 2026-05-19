@@ -6,12 +6,15 @@ import json
 import os
 import threading
 import fitz  # pymupdf
+from dotenv import load_dotenv
 from llama_index.core import (
     VectorStoreIndex, Document, StorageContext, Settings, PromptTemplate
 )
 from llama_index.vector_stores.chroma import ChromaVectorStore
-from llama_index.llms.ollama import Ollama
+from llama_index.llms.groq import Groq
 from llama_index.embeddings.ollama import OllamaEmbedding
+
+load_dotenv()
 
 app = FastAPI()
 
@@ -22,7 +25,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-Settings.llm = Ollama(model="mistral", request_timeout=360.0)
+Settings.llm = Groq(model="llama-3.3-70b-versatile", api_key=os.environ["GROQ_API_KEY"])
 Settings.embed_model = OllamaEmbedding(model_name="nomic-embed-text", request_timeout=120.0)
 Settings.chunk_size = 512
 Settings.chunk_overlap = 64
